@@ -18,6 +18,6 @@ python_file.write('\n')
 python_file.write(str(avg))
 os.system('cat event/metric_value.txt')
 python_file.close()
-with open('vent/metric_value.txt') as f:
+with open('event/metric_value.txt') as f:
     lines = f.readlines()
     print lines 
