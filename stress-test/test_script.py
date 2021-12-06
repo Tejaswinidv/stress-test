@@ -11,5 +11,5 @@ if not CHECK_FOLDER:
     os.makedirs("event")
 #os.mkdir("event")
 python_file = open("event/metric_value.txt", "a")
-python_file.append(str(avg))
+python_file.write(str(avg))
 python_file.close()
