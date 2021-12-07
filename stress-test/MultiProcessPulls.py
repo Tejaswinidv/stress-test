@@ -23,7 +23,7 @@ def img_pkg_pull(self):
 if __name__ == '__main__':
     try:
         #print("\n Enter Docker Login Credentials registry-acceptance.tanzu.vmware.com ")
-        os.system('docker login registry-acceptance.tanzu.vmware.com')
+        #os.system('docker login registry-acceptance.tanzu.vmware.com')
         #n = int(input("\n Please enter number of pulls: "))
         #if not n :
         #    print("Enter Valid Input")
