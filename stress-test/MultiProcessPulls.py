@@ -10,7 +10,7 @@ def img_pkg_pull(self):
             #print(sequence);
     pid = os.getpid()
     print("\n Entered Process \n ***PROCESSS ID**** : ",pid)
-    command = ('imgpkg pull -b registry-acceptance.tanzu.vmware.com/tanzu-application-platform/tap-packages:0.3.0-build.2 -o /tmp/tap/%s' % pid )
+    command = ('imgpkg pull -b registry-acceptance.pivoal.io/tanzu-application-platform/tap-packages:0.3.0-build.2 -o /tmp/tap/%s' % pid )
     #print ("\nPull Command is : "+command)
     original_time = time.time()
     os.system(command)
@@ -27,7 +27,7 @@ def install_img_pkg(self):
 if __name__ == '__main__':
     try:
         #print("\n Enter Docker Login Credentials registry-acceptance.tanzu.vmware.com ")
-        os.system('docker login registry-acceptance.tanzu.vmware.com -u $uname -p $upassword')
+        os.system('docker login registry-acceptance.pivotal.io -u $uname -p $upassword')
         #n = int(input("\n Please enter number of pulls: "))
         #if not n :
         #    print("Enter Valid Input")
