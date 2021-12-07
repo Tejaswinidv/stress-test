@@ -10,7 +10,7 @@ def img_pkg_pull(self):
             #print(sequence);
     pid = os.getpid()
     print("\n Entered Process \n ***PROCESSS ID**** : ",pid)
-    command = ('imgpkg pull -b registry-acceptance.pivoal.io/tanzu-application-platform/tap-packages:0.3.0-build.2 -o /tmp/tap/%s' % pid )
+    command = ('imgpkg pull -b registry-acceptance.pivotal.io/tanzu-application-platform/tap-packages:0.3.0-build.2 -o /tmp/tap/%s' % pid )
     #print ("\nPull Command is : "+command)
     original_time = time.time()
     os.system(command)
