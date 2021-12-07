@@ -32,7 +32,7 @@ if __name__ == '__main__':
         #if not n :
         #    print("Enter Valid Input")
         #    exit
-        install_img_pkg()
+        #install_img_pkg()
         inputs = list(range(10))
         origin_time = time.time()
         p = multiprocessing.Pool(processes = 10)
