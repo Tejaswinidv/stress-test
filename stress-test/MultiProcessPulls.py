@@ -19,6 +19,10 @@ def img_pkg_pull(self):
     #print("Execution time is: ",times_now)
     print ("\n Finished working on PID : %s  Execution Time Taken for this pull is %s " % (pid,times_now))
     os.system('rm -rf /tmp/taptest/%s' % pid)
+def install_img_pkg(self):
+    os.system('wget -O- https://carvel.dev/install.sh > install.sh')
+    os.system('sudo bash install.sh')
+    os.system('imgpkg version')
 
 if __name__ == '__main__':
     try:
@@ -28,6 +32,7 @@ if __name__ == '__main__':
         #if not n :
         #    print("Enter Valid Input")
         #    exit
+        install_img_pkg()
         inputs = list(range(10))
         origin_time = time.time()
         p = multiprocessing.Pool(processes = 10)
