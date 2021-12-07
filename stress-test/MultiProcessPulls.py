@@ -40,7 +40,7 @@ if __name__ == '__main__':
         p.join()
         time_interval = time.time() - origin_time
         print ('Total Time Taken :', time_interval)
-        python_file.write(time_interval) 
+        python_file.write(str(time_interval)) 
 
     except:
         #print("Unexpected error occured:", sys.exc_info()[0])
