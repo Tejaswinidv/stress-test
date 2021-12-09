@@ -17,7 +17,7 @@ def img_pkg_pull(self):
     #print(timeit.timeit(setup = os.system(command), stmt = os.system(command), number = 1))
     times_now = time.time() - original_time
     python_file = open("event/metric_value.txt", "a")
-    python_file.write(str(time_interval)+'\n') 
+    python_file.write(str(times_now)+'\n') 
     python_file.close()
     #print("Execution time is: ",times_now)
     print ("\n Finished working on PID : %s  Execution Time Taken for this pull is %s " % (pid,times_now))
