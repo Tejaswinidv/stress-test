@@ -10,7 +10,10 @@ def img_pkg_pull(self):
             #print(sequence);
     pid = os.getpid()
     print("\n Entered Process \n ***PROCESSS ID**** : ",pid)
-    command = ('imgpkg pull -b registry-acceptance.pivotal.io/tanzu-application-platform/tap-packages:0.3.0-build.2 -o /tmp/tap/%s' % pid )
+    tap_list = ["tap-packages:0.3.0-build.2", "tap-packages:0.3.0-build.1", "tap-packages:0.4.0-build.11", "tap-packages:0.4.0-build.10", "tap-packages:0.4.0-build.9"]
+    tap_pkg = random.choice(tap_list)
+    command = ('imgpkg pull -b registry-acceptance.tanzu.vmware.com/tanzu-application-platform/%s -o /tmp/tap/%s' % (tap_pkg,pid) )
+    #command = ('imgpkg pull -b registry-acceptance.pivotal.io/tanzu-application-platform/tap-packages:0.3.0-build.2 -o /tmp/tap/%s' % pid )
     #print ("\nPull Command is : "+command)
     original_time = time.time()
     os.system(command)
