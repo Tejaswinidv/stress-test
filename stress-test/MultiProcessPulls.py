@@ -27,7 +27,6 @@ def img_pkg_pull(self):
     #print("Execution time is: ",times_now)
     print ("\n Finished working on PID : %s  Execution Time Taken for this pull is %s " % (pid,times_now))
     os.system('rm -rf /tmp/taptest/%s' % pid)
-    os.system('cat event/metric_value.txt')
 
 if __name__ == '__main__':
     try:
