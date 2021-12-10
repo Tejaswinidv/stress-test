@@ -16,7 +16,8 @@ def img_pkg_pull(self):
     #command = ('imgpkg pull -b registry-acceptance.pivotal.io/tanzu-application-platform/tap-packages:0.3.0-build.2 -o /tmp/tap/%s' % pid )
     #print ("\nPull Command is : "+command)
     original_time = time.time()
-    os.system(command)
+    os.system(command) 
+    print(command) 
     #print(timeit.timeit(setup = os.system(command), stmt = os.system(command), number = 1))
     times_now = time.time() - original_time
     python_file = open("event/metric_value.txt", "a+")
