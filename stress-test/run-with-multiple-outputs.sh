@@ -9,3 +9,7 @@ while read METRIC_VALUE; do
   "https://vmwareprod.wavefront.com/report"
 done < event/metric_value.txt
 echo ${value}
+
+awk '{curl -X POST -H "Authorization: Bearer ${WAVEFRONT_API_KEY}" \
+  -d "${METRIC_NAME} $0 source=concourse" \
+  "https://vmwareprod.wavefront.com/report"}END{print s}' event/metric_value.txt
