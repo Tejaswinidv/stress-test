@@ -39,9 +39,9 @@ if __name__ == '__main__':
         CHECK_FOLDER = os.path.isdir("event")
         if not CHECK_FOLDER:
             os.makedirs("event")
-        inputs = list(range($count))
+        inputs = list(range(count))
         origin_time = time.time()
-        p = multiprocessing.Pool(processes = $count)
+        p = multiprocessing.Pool(processes = count)
         p.map_async(img_pkg_pull, inputs)
         p.close()
         p.join()
