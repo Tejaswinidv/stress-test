@@ -11,5 +11,5 @@ done < event/metric_value.txt
 echo ${value}
 
 awk '{curl -X POST -H "Authorization: Bearer ${WAVEFRONT_API_KEY}" \
-  -d "${METRIC_NAME} $1 source=concourse" \
-  "https://vmwareprod.wavefront.com/report"}END{print $1}' event/metric_value.txt
+  -d "${METRIC_NAME} $0 source=concourse" \
+  "https://vmwareprod.wavefront.com/report"}END{print $0}' event/metric_value.txt
