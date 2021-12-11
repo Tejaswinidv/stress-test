@@ -14,5 +14,5 @@ for METRIC_VALUE in $(cat event/metric_value.txt); do
   -d "${METRIC_NAME} ${METRIC_VALUE} source=concourse" \
   "https://vmwareprod.wavefront.com/report"`
   echo $test
-  sleep 10
+  sleep 2
 done 
