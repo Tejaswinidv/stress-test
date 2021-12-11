@@ -31,7 +31,7 @@ def img_pkg_pull(self):
 if __name__ == '__main__':
     try:
         #print("\n Enter Docker Login Credentials registry-acceptance.tanzu.vmware.com ")
-        os.system('docker login registry-acceptance.pivotal.io -u $uname -p $upassword')
+        os.system('echo "$pcount" > docker login registry-acceptance.pivotal.io -u $uname -p $upassword')
         #n = int(input("\n Please enter number of pulls: "))
         #if not n :
         #    print("Enter Valid Input")
@@ -39,9 +39,11 @@ if __name__ == '__main__':
         CHECK_FOLDER = os.path.isdir("event")
         if not CHECK_FOLDER:
             os.makedirs("event")
-        inputs = list(range(10))
+        os.system('echo "$pcount" > event/count.txt') 
+        count = os.system('cat event/count.txt') 
+        inputs = list(range(count))
         origin_time = time.time()
-        p = multiprocessing.Pool(processes = 10)
+        p = multiprocessing.Pool(processes = count)
         p.map_async(img_pkg_pull, inputs)
         p.close()
         p.join()
