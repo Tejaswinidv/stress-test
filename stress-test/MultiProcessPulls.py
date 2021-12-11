@@ -21,9 +21,9 @@ def img_pkg_pull(self):
     #print(command) 
     #print(timeit.timeit(setup = os.system(command), stmt = os.system(command), number = 1))
     times_now = time.time() - original_time
-    emit_wavefront= 'curl -X POST -H "Authorization: Bearer ${WAVEFRONT_API_KEY}" \
-                     -d "${METRIC_NAME} ${times_now} source=concourse" \
-                     "https://vmwareprod.wavefront.com/report"'
+    emit_wavefront= ('curl -X POST -H "Authorization: Bearer ${WAVEFRONT_API_KEY}" \
+                      -d "${METRIC_NAME} %s source=concourse" \
+                     "https://vmwareprod.wavefront.com/report"' % times_now ) 
     print(emit_wavefront) 
     os.system(emit_wavefront) 
     python_file = open("event/metric_value.txt", "a+")
