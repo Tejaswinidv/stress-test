@@ -31,7 +31,7 @@ def img_pkg_pull(self):
 if __name__ == '__main__':
     try:
         #print("\n Enter Docker Login Credentials registry-acceptance.tanzu.vmware.com ")
-        os.system('echo "$pcount" > docker login registry-acceptance.pivotal.io -u $uname -p $upassword')
+        os.system('docker login registry-acceptance.pivotal.io -u $uname -p $upassword')
         #n = int(input("\n Please enter number of pulls: "))
         #if not n :
         #    print("Enter Valid Input")
