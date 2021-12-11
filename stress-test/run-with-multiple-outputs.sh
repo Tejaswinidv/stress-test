@@ -10,7 +10,8 @@
 
 for METRIC_VALUE in $(cat event/metric_value.txt); do 
    echo ${METRIC_VALUE} 
-  curl -X POST -H "Authorization: Bearer ${WAVEFRONT_API_KEY}" \
+  test= `curl -X POST -H "Authorization: Bearer ${WAVEFRONT_API_KEY}" \
   -d "${METRIC_NAME} ${METRIC_VALUE} source=concourse" \
-  "https://vmwareprod.wavefront.com/report"
+  "https://vmwareprod.wavefront.com/report"`
+  echo $test
 done 
