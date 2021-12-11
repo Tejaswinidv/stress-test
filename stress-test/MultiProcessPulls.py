@@ -40,9 +40,8 @@ if __name__ == '__main__':
         if not CHECK_FOLDER:
             os.makedirs("event")
         os.system('echo "$pcount" > event/count.txt') 
-        count = os.system('cat event/count.txt')
-        os.system('cat event/count.txt') 
-        print("this is from file")
+        with open('event/count.txt') as f:
+            count = f.readlines()
         print(count)
         inputs = list(range(count))
         origin_time = time.time()
