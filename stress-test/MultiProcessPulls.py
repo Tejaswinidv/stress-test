@@ -43,6 +43,7 @@ if __name__ == '__main__':
         count = os.system('cat event/count.txt')
         os.system('cat event/count.txt') 
         print("this is from file")
+        print(count)
         inputs = list(range(count))
         origin_time = time.time()
         p = multiprocessing.Pool(processes = count)
