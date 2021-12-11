@@ -25,6 +25,7 @@ def img_pkg_pull(self):
                       -d "${METRIC_NAME} %s source=concourse" \
                      "https://vmwareprod.wavefront.com/report"' % times_now ) 
     print(emit_wavefront) 
+    time.sleep(2)
     os.system(emit_wavefront) 
     python_file = open("event/metric_value.txt", "a+")
     python_file.write(str(times_now)+'\n') 
