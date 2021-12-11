@@ -43,9 +43,9 @@ if __name__ == '__main__':
         with open('event/count.txt') as f:
             count = f.readlines()
         print(count)
-        inputs = list(range(count))
+        inputs = list(range(int(count)))
         origin_time = time.time()
-        p = multiprocessing.Pool(processes = count)
+        p = multiprocessing.Pool(processes = int(count))
         p.map_async(img_pkg_pull, inputs)
         p.close()
         p.join()
